@@ -1,4 +1,18 @@
-### 构建aarch64-apple-ios-cross Docker Image
+## Rust在windows上编译aarch64-apple产物
+
+- 使用cross-rs
+[https://github.com/cross-rs/cross?tab=readme-ov-file](https://github.com/cross-rs/cross?tab=readme-ov-file)
+
+- 创建Cross.toml文件
+[target.aarch64-apple-darwin]
+image = "ghcr.io/cross-rs/aarch64-apple-darwin-cross:local"
+
+- 构建
+```
+cross build --target aarch64-apple-darwin --release
+```
+
+### 构建aarch64-apple-darwin-cross Docker Image
 
 [https://github.com/cross-rs/cross-toolchains](https://github.com/cross-rs/cross-toolchains)
 
@@ -14,7 +28,8 @@ git submodule update --init --remote
 已知问题，  SDK < 10.16 或者 SDK >= 13.0 无法构建成功， 建议使用12.3
 
 - 将sdk放置cross-toolchains/docker/[some-dir]下
-- 构建
+- 
+- 构建Image
 ```
 cargo build-docker-image aarch64-apple-darwin-cross \
   --build-arg 'MACOS_SDK_DIR=[some-dir]' \
