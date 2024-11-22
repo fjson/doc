@@ -5,11 +5,13 @@
 
 - 创建Cross.toml文件
 
+```
 [target.aarch64-apple-darwin]
 image = "ghcr.io/cross-rs/aarch64-apple-darwin-cross:local"
+```
 
 - 构建
-```
+```shell
 cross build --target aarch64-apple-darwin --release
 ```
 
@@ -18,7 +20,7 @@ cross build --target aarch64-apple-darwin --release
 [https://github.com/cross-rs/cross-toolchains](https://github.com/cross-rs/cross-toolchains)
 
 - Clone项目
-```
+```shell
 git clone https://github.com/cross-rs/cross
 cd cross
 git submodule update --init --remote
@@ -31,7 +33,7 @@ git submodule update --init --remote
 - 将sdk放置cross-toolchains/docker/[some-dir]下
 - 
 - 构建Image
-```
+```shell
 cargo build-docker-image aarch64-apple-darwin-cross \
   --build-arg 'MACOS_SDK_DIR=[some-dir]' \
   --build-arg 'MACOS_SDK_FILE=MacOSX12.3.sdk.tar.xz'
