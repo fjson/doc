@@ -4,6 +4,7 @@
 [https://github.com/cross-rs/cross?tab=readme-ov-file](https://github.com/cross-rs/cross?tab=readme-ov-file)
 
 - 创建Cross.toml文件
+
 [target.aarch64-apple-darwin]
 image = "ghcr.io/cross-rs/aarch64-apple-darwin-cross:local"
 
