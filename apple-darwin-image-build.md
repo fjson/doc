@@ -31,7 +31,6 @@ git submodule update --init --remote
 已知问题，  SDK < 10.16 或者 SDK >= 13.0 无法构建成功， 建议使用12.3
 
 - 将sdk放置cross-toolchains/docker/[some-dir]下
-- 
 - 构建Image
 ```shell
 cargo build-docker-image aarch64-apple-darwin-cross \
